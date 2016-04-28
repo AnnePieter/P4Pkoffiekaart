@@ -1,0 +1,10 @@
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe.config
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\Interop.LibLogicalAccess.dll
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.csproj.ResolveComReference.cache
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.pdb
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.csprojResolveAssemblyReference.cache
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Properties.Resources.resources
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.csproj.GenerateResource.Cache
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.exe
+C:\VisualBasic\Solutions\SmartCardConversaiton\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.pdb

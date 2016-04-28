@@ -1,0 +1,19 @@
+----
+Functie:
+
+-Lees nummer uit
+
+---
+Geef punt
+
+-Krijgt nummer
+-Zoekt op in DB en doet punten + 1
+
+---
+Koop koffie met punten
+-Zoekt op in DB, doet punten - 10
+
+---
+Toon punten
+-Zoek op in DB en print punten
+
