@@ -243,6 +243,7 @@ namespace SmartCardConversaiton
                     try
                     {
                         ToevoegenPunten = Convert.ToInt32(tbAantalPuntjes.Text);
+                        PuntAantal +=ToevoegenPunten;
                     }
                     catch (Exception)
                     {
@@ -251,21 +252,20 @@ namespace SmartCardConversaiton
                     }
                 }
 
-                //Punten toevoegen
-                if (Mod == "+")
-                {
-                    PuntAantal = PuntAantal + ToevoegenPunten;
-                }
                 else
-                {
-                    //Niet +? Dan -!
-                    PuntAantal = PuntAantal - 10;
+                {          
+                    
                     //Kijk of punten niet negatief worden
-                    if (PuntAantal < 0)
+                    if (PuntAantal < 10)
                     {
                         //Anders error
                         ErrorPunten = true;
                         MessageBox.Show("Helaas heeft u niet genoeg punten om koffie te kopen.");
+                    }
+                    else
+                    {   
+                        //Niet +? Dan -!
+                        PuntAantal -= 10;
                     }
                 }
                 //Geen error?
