@@ -304,25 +304,37 @@ namespace SmartCardConversaiton
 
         }
         //LeesPasUit Knop
-        private void butLeesUit_Click(object sender, EventArgs e)
+        
+        //LeesGegevensUit Knop
+        
+        //PuntGeven
+       
+        //KoffieKopen
+        
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             LeesPasUit();
         }
-        //LeesGegevensUit Knop
-        private void butVoornaam_Click(object sender, EventArgs e)
+
+        private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
             LeesGegevensUitDB();
-            
         }
-        //PuntGeven
-        private void butPuntGeven_Click(object sender, EventArgs e)
+
+        private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
             KenPuntToe("+");
         }
-        //KoffieKopen
-        private void butKoffieKopen_Click(object sender, EventArgs e)
+
+        private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
             KenPuntToe("-");
+        }
+
+        private void materialRaisedButton2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
