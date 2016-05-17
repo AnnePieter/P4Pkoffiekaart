@@ -81,18 +81,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Cormet.png" />
+  </ItemGroup>
+  <ItemGroup>
     <COMReference Include="LibLogicalAccess">
-      <Guid>{E8C910CA-7ECF-48C8-B353-448EA02A5490}</Guid>
+      <Guid>{D6F77FFF-AECB-4477-BFFF-DCA1D2827BD6}</Guid>
       <VersionMajor>1</VersionMajor>
-      <VersionMinor>81</VersionMinor>
+      <VersionMinor>82</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cormet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

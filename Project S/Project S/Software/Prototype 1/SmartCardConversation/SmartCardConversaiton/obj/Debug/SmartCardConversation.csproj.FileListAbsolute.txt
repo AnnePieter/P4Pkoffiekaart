@@ -39,3 +39,17 @@ C:\Users\pepij\Documents\C#\SmartCardConversation\SmartCardConversaiton\obj\Debu
 C:\Users\pepij\Documents\C#\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Properties.Resources.resources
 C:\Users\pepij\Documents\C#\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversation.csproj.GenerateResource.Cache
 C:\Users\pepij\Documents\C#\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Kaartlezer.resources
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe.config
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversation.csproj.ResolveComReference.cache
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.exe
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.pdb
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Kaartlezer.resources
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Properties.Resources.resources
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversation.csproj.GenerateResource.Cache
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.pdb
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MaterialSkin.dll
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Design.dll
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.dll
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\Interop.LibLogicalAccess.dll

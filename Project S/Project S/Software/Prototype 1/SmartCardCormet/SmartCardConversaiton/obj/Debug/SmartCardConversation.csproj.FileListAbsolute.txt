@@ -55,3 +55,14 @@ C:\Users\jesse\Downloads\Project S\Project S\Software\Prototype 1\SmartCardCorme
 C:\Users\jesse\Downloads\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.exe
 C:\Users\jesse\Downloads\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.pdb
 C:\Users\jesse\Downloads\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversation.csprojResolveAssemblyReference.cache
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe.config
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversation.csproj.ResolveComReference.cache
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.exe
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.pdb
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversation.csprojResolveAssemblyReference.cache
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Kaartlezer.resources
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Properties.Resources.resources
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\SmartCardConversation.csproj.GenerateResource.Cache
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.pdb
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardCormet\SmartCardConversaiton\obj\Debug\Interop.LibLogicalAccess.dll
