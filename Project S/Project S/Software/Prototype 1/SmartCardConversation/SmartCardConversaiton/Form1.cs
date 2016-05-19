@@ -142,35 +142,41 @@ namespace SmartCardConversaiton
                 {
                     Console.WriteLine("Plaats uw kaart");
                     //Als er connectie met een kaart is
-                    if (readerUnit.Connect())
+                    try {
+                        if (readerUnit.Connect())
+                        {
+
+                            //Schrijf connectie
+                            Console.WriteLine("CONNECTIE");
+
+                            //Pak chip uit de kaart
+                            chip chip = readerUnit.GetSingleChip();
+
+                            //Schrijf chip type
+                            Console.WriteLine("Card type: {0}", chip.Type);
+
+                            ////Schrijf manufacture nummer
+                            Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
+                            string deLijn = readerUnit.GetNumber(chip);
+
+
+                            //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
+                            //if (chip is IDESFireChip)
+                            //{
+                            //    ICommands cmd = chip.Commands;
+                            //    if (cmd is IDESFireEV1Commands)
+                            //    {
+                            //        Console.WriteLine("Mifare YUPPP");
+                            //    }
+                            //}
+
+                            //Netjes disconnecten
+                            readerUnit.Disconnect();
+                        }
+                    }
+                    catch(Exception)
                     {
 
-                        //Schrijf connectie
-                        Console.WriteLine("CONNECTIE");
-
-                        //Pak chip uit de kaart
-                        chip chip = readerUnit.GetSingleChip();
-
-                        //Schrijf chip type
-                        Console.WriteLine("Card type: {0}", chip.Type);
-
-                        ////Schrijf manufacture nummer
-                        Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
-                        string deLijn = readerUnit.GetNumber(chip);
-
-
-                        //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
-                        //if (chip is IDESFireChip)
-                        //{
-                        //    ICommands cmd = chip.Commands;
-                        //    if (cmd is IDESFireEV1Commands)
-                        //    {
-                        //        Console.WriteLine("Mifare YUPPP");
-                        //    }
-                        //}
-
-                        //Netjes disconnecten
-                        readerUnit.Disconnect();
                     }
 
 

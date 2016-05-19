@@ -155,12 +155,12 @@
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.materialLabel1.ForeColor = System.Drawing.Color.Silver;
             this.materialLabel1.Location = new System.Drawing.Point(573, 512);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(104, 19);
+            this.materialLabel1.Size = new System.Drawing.Size(210, 31);
             this.materialLabel1.TabIndex = 5;
             this.materialLabel1.Text = "STATUS: IDLE";
             // 
