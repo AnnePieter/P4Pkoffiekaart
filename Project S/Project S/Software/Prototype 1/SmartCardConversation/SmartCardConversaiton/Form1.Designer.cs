@@ -32,13 +32,13 @@
             this.tbAantalPuntjes = new System.Windows.Forms.TextBox();
             this.test = new MetroFramework.Controls.MetroTabControl();
             this.Home = new MetroFramework.Controls.MetroTabPage();
-            this.Debug = new MetroFramework.Controls.MetroTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.Debug = new MetroFramework.Controls.MetroTabPage();
             this.test.SuspendLayout();
             this.Home.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             // Home
             // 
-            this.Home.BackColor = System.Drawing.Color.White;
+            this.Home.BackColor = System.Drawing.Color.Black;
             this.Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home.BackgroundImage")));
             this.Home.Controls.Add(this.groupBox1);
             this.Home.HorizontalScrollbarBarColor = true;
@@ -77,16 +77,6 @@
             this.Home.TabIndex = 0;
             this.Home.Text = "Home";
             this.Home.VerticalScrollbarBarColor = true;
-            // 
-            // Debug
-            // 
-            this.Debug.HorizontalScrollbarBarColor = true;
-            this.Debug.Location = new System.Drawing.Point(4, 35);
-            this.Debug.Name = "Debug";
-            this.Debug.Size = new System.Drawing.Size(1014, 729);
-            this.Debug.TabIndex = 1;
-            this.Debug.Text = "Debug";
-            this.Debug.VerticalScrollbarBarColor = true;
             // 
             // groupBox1
             // 
@@ -106,46 +96,18 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.UseCompatibleTextRendering = true;
             // 
-            // materialLabel1
+            // materialRaisedButton4
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel1.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.materialLabel1.Location = new System.Drawing.Point(573, 512);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(268, 45);
-            this.materialLabel1.TabIndex = 5;
-            this.materialLabel1.Text = "STATUS: Waiting";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.BackColor = System.Drawing.Color.ForestGreen;
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(-32, 224);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(277, 31);
-            this.materialRaisedButton1.TabIndex = 6;
-            this.materialRaisedButton1.Text = "Kaart Lezen";
-            this.materialRaisedButton1.UseCompatibleTextRendering = true;
-            this.materialRaisedButton1.UseVisualStyleBackColor = false;
-            // 
-            // materialRaisedButton2
-            // 
-            this.materialRaisedButton2.Depth = 0;
-            this.materialRaisedButton2.Location = new System.Drawing.Point(0, 271);
-            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton2.Name = "materialRaisedButton2";
-            this.materialRaisedButton2.Primary = true;
-            this.materialRaisedButton2.Size = new System.Drawing.Size(245, 31);
-            this.materialRaisedButton2.TabIndex = 7;
-            this.materialRaisedButton2.Text = "Informatie Lezen";
-            this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click_1);
+            this.materialRaisedButton4.Depth = 0;
+            this.materialRaisedButton4.Location = new System.Drawing.Point(-9, 367);
+            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton4.Name = "materialRaisedButton4";
+            this.materialRaisedButton4.Primary = true;
+            this.materialRaisedButton4.Size = new System.Drawing.Size(254, 31);
+            this.materialRaisedButton4.TabIndex = 9;
+            this.materialRaisedButton4.Text = "Koop een koffie";
+            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
             // 
             // materialRaisedButton3
             // 
@@ -160,17 +122,57 @@
             this.materialRaisedButton3.UseVisualStyleBackColor = true;
             this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
-            // materialRaisedButton4
+            // materialRaisedButton2
             // 
-            this.materialRaisedButton4.Depth = 0;
-            this.materialRaisedButton4.Location = new System.Drawing.Point(-9, 367);
-            this.materialRaisedButton4.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton4.Name = "materialRaisedButton4";
-            this.materialRaisedButton4.Primary = true;
-            this.materialRaisedButton4.Size = new System.Drawing.Size(254, 31);
-            this.materialRaisedButton4.TabIndex = 9;
-            this.materialRaisedButton4.Text = "Koop een koffie";
-            this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Depth = 0;
+            this.materialRaisedButton2.Location = new System.Drawing.Point(0, 271);
+            this.materialRaisedButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton2.Name = "materialRaisedButton2";
+            this.materialRaisedButton2.Primary = true;
+            this.materialRaisedButton2.Size = new System.Drawing.Size(245, 31);
+            this.materialRaisedButton2.TabIndex = 7;
+            this.materialRaisedButton2.Text = "Informatie Lezen";
+            this.materialRaisedButton2.UseVisualStyleBackColor = true;
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.BackColor = System.Drawing.Color.ForestGreen;
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(-32, 224);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(277, 31);
+            this.materialRaisedButton1.TabIndex = 6;
+            this.materialRaisedButton1.Text = "Kaart Lezen";
+            this.materialRaisedButton1.UseCompatibleTextRendering = true;
+            this.materialRaisedButton1.UseVisualStyleBackColor = false;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(573, 512);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(104, 19);
+            this.materialLabel1.TabIndex = 5;
+            this.materialLabel1.Text = "STATUS: IDLE";
+            // 
+            // Debug
+            // 
+            this.Debug.HorizontalScrollbarBarColor = true;
+            this.Debug.Location = new System.Drawing.Point(4, 35);
+            this.Debug.Name = "Debug";
+            this.Debug.Size = new System.Drawing.Size(1016, 729);
+            this.Debug.TabIndex = 1;
+            this.Debug.Text = "Debug";
+            this.Debug.VerticalScrollbarBarColor = true;
             // 
             // Kaartlezer
             // 

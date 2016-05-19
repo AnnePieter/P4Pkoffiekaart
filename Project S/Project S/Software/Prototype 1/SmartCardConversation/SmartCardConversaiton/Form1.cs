@@ -16,11 +16,13 @@ namespace SmartCardConversaiton
     {
         public Kaartlezer()
         {
-            InitializeComponent();           
+            InitializeComponent();  
         }
 
-        public static string RegistratiePasID()
+        
+        public string RegistratiePasID()
         {
+
             //Kijk of lezer connected is
             IReaderProvider readerProvider = new PCSCReaderProvider();
 
@@ -29,21 +31,23 @@ namespace SmartCardConversaiton
 
             //Als USB connectie er is
             if (readerUnit.ConnectToReader())
-            {
+            {    materialLabel1.Text = "STATUS: READING";            
                 string ManNummer = "Pas niet in gebruik";
                 //Wacht 15 seconden op een kaart
                 Console.WriteLine("Bied uw kaart aan aan de lezer");
+                
                 if (readerUnit.WaitInsertion(1500000))
                 {
                     //Als er connectie met een kaart is
                     if (readerUnit.Connect())
-                    {
+                    {                        
                         //Pak chip uit de kaart
                         chip chip = readerUnit.GetSingleChip();
 
                         //Schrijf chip type
                         ManNummer = readerUnit.GetNumber(chip);
                         readerUnit.Disconnect();
+
                     }
                 }
 
@@ -66,7 +70,7 @@ namespace SmartCardConversaiton
         }
 
         //Lees pas uit en toon gegevens gebruiker
-        public static void LeesGegevensUitDB()
+        public void LeesGegevensUitDB()
         {
 
             //Connectiestring naar DB
@@ -118,8 +122,9 @@ namespace SmartCardConversaiton
 
         
         //Lees pas uit en toon gegevens over pas (ManNummer, Chiptype)
-        public static void LeesPasUit()
+        public void LeesPasUit()
         {
+
             Console.WriteLine("Begin met uitlezen van pas");
 
             //Kijk of lezer connected is
@@ -177,12 +182,21 @@ namespace SmartCardConversaiton
                 //Disconnect met USB
                 readerUnit.Disconnect();
             }
+            
 
         }
 
 
         public void KenPuntToe(string Mod)
         {
+            Boolean Error = false;
+            Boolean ErrorPunten = false;
+            if(Mod == "+" && tbAantalPuntjes.Text == "")
+            {
+                Error = true;
+                MessageBox.Show("Voeg aub een getal in!!");
+                return;
+            }
             //Pak ManID van pas
             string registratiePas = RegistratiePasID();
             //Kijk of error terugkomt
@@ -195,8 +209,7 @@ namespace SmartCardConversaiton
                 //Schrijf registratie ID
                 Console.WriteLine("Registratie voor " + registratiePas);
                 //Maak booleans voor error catching
-                Boolean Error = false;
-                Boolean ErrorPunten = false;
+                
                 //Maak standaard int voor Punten (voor return)
                 int PuntAantal = 0;
                 //Maak connectiestring
@@ -267,6 +280,7 @@ namespace SmartCardConversaiton
                         //Niet +? Dan -!
                         PuntAantal -= 10;
                     }
+                    
                 }
                 //Geen error?
                 if (!ErrorPunten)
@@ -314,27 +328,34 @@ namespace SmartCardConversaiton
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
+            materialLabel1.Text = "STATUS: READING";
+            this.Refresh();
             LeesPasUit();
+            materialLabel1.Text = "STATUS: IDLE";
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
+            materialLabel1.Text = "STATUS: READING";
+            this.Refresh();
             LeesGegevensUitDB();
+            materialLabel1.Text = "STATUS: IDLE";
         }
 
         private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
+            materialLabel1.Text = "STATUS: READING";
+            this.Refresh();
             KenPuntToe("+");
+            materialLabel1.Text = "STATUS: IDLE";
         }
 
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
+            materialLabel1.Text = "STATUS: READING";
+            this.Refresh();
             KenPuntToe("-");
-        }
-
-        private void materialRaisedButton2_Click_1(object sender, EventArgs e)
-        {
-
+            materialLabel1.Text = "STATUS: IDLE";
         }
     }
 }
