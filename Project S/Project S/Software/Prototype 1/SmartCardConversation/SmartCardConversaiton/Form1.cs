@@ -16,13 +16,11 @@ namespace SmartCardConversaiton
     {
         public Kaartlezer()
         {
-            InitializeComponent();  
+            InitializeComponent();           
         }
 
-        
-        public string RegistratiePasID()
+        public static string RegistratiePasID()
         {
-
             //Kijk of lezer connected is
             IReaderProvider readerProvider = new PCSCReaderProvider();
 
@@ -32,10 +30,11 @@ namespace SmartCardConversaiton
                 {
             //Als USB connectie er is
             if (readerUnit.ConnectToReader())
-            {    materialLabel1.Text = "STATUS: READING";            
+            {
                 string ManNummer = "Pas niet in gebruik";
                 //Wacht 15 seconden op een kaart
                 Console.WriteLine("Bied uw kaart aan aan de lezer");
+<<<<<<< HEAD
                 
                     if (readerUnit.WaitInsertion(1500000))
                     {
@@ -50,6 +49,19 @@ namespace SmartCardConversaiton
                             readerUnit.Disconnect();
 
                         }
+=======
+                if (readerUnit.WaitInsertion(1500000))
+                {
+                    //Als er connectie met een kaart is
+                    if (readerUnit.Connect())
+                    {
+                        //Pak chip uit de kaart
+                        chip chip = readerUnit.GetSingleChip();
+
+                        //Schrijf chip type
+                        ManNummer = readerUnit.GetNumber(chip);
+                        readerUnit.Disconnect();
+>>>>>>> 44abee34fd72198b118327256d99959135aa281a
                     }
 
                     //Disconnect met USB
@@ -78,7 +90,7 @@ namespace SmartCardConversaiton
         }
 
         //Lees pas uit en toon gegevens gebruiker
-        public void LeesGegevensUitDB()
+        public static void LeesGegevensUitDB()
         {
 
             //Connectiestring naar DB
@@ -130,9 +142,8 @@ namespace SmartCardConversaiton
 
         
         //Lees pas uit en toon gegevens over pas (ManNummer, Chiptype)
-        public void LeesPasUit()
+        public static void LeesPasUit()
         {
-
             Console.WriteLine("Begin met uitlezen van pas");
 
             //Kijk of lezer connected is
@@ -145,79 +156,57 @@ namespace SmartCardConversaiton
             //Als USB connectie er is
             if (readerUnit.ConnectToReader())
             {
-                try {
-                    //Wacht 15 seconden op een kaart
-                    if (readerUnit.WaitInsertion(1500000))
-                    {
-                        Console.WriteLine("Plaats uw kaart");
-                        //Als er connectie met een kaart is
-                        try {
-                            if (readerUnit.Connect())
-                            {
-
-                                //Schrijf connectie
-                                Console.WriteLine("CONNECTIE");
-
-                                //Pak chip uit de kaart
-                                chip chip = readerUnit.GetSingleChip();
-
-                                //Schrijf chip type
-                                Console.WriteLine("Card type: {0}", chip.Type);
-
-                                ////Schrijf manufacture nummer
-                                Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
-                                string deLijn = readerUnit.GetNumber(chip);
-
-
-                                //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
-                                //if (chip is IDESFireChip)
-                                //{
-                                //    ICommands cmd = chip.Commands;
-                                //    if (cmd is IDESFireEV1Commands)
-                                //    {
-                                //        Console.WriteLine("Mifare YUPPP");
-                                //    }
-                                //}
-
-                                //Netjes disconnecten
-                                readerUnit.Disconnect();
-                            }
-                        }
-                        catch (Exception)
-                        {
-
-                        }
-
-
-                        //Remove kaart message
-                        Console.WriteLine("Remove card");
-
-                    }
-                }
-                catch(Exception)
+                //Wacht 15 seconden op een kaart
+                if (readerUnit.WaitInsertion(1500000))
                 {
-                    MessageBox.Show("Geen kaartlezer aangesloten");
+                    Console.WriteLine("Plaats uw kaart");
+                    //Als er connectie met een kaart is
+                    if (readerUnit.Connect())
+                    {
+
+                        //Schrijf connectie
+                        Console.WriteLine("CONNECTIE");
+
+                        //Pak chip uit de kaart
+                        chip chip = readerUnit.GetSingleChip();
+
+                        //Schrijf chip type
+                        Console.WriteLine("Card type: {0}", chip.Type);
+
+                        ////Schrijf manufacture nummer
+                        Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
+                        string deLijn = readerUnit.GetNumber(chip);
+
+
+                        //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
+                        //if (chip is IDESFireChip)
+                        //{
+                        //    ICommands cmd = chip.Commands;
+                        //    if (cmd is IDESFireEV1Commands)
+                        //    {
+                        //        Console.WriteLine("Mifare YUPPP");
+                        //    }
+                        //}
+
+                        //Netjes disconnecten
+                        readerUnit.Disconnect();
+                    }
+
+
+                    //Remove kaart message
+                    Console.WriteLine("Remove card");
+
                 }
-               
+
                 //Disconnect met USB
                 readerUnit.Disconnect();
             }
-           
-            
 
         }
 
 
         public void KenPuntToe(string Mod)
         {
-            Boolean Error = false;
-            Boolean ErrorPunten = false;
-            if(Mod == "+" && tbAantalPuntjes.Text == "")
-            {
-                Error = true;
-                MessageBox.Show("Voeg aub een getal in!!");
-                return;
-            }
             //Pak ManID van pas
             string registratiePas = RegistratiePasID();
             //Kijk of error terugkomt
@@ -230,7 +219,8 @@ namespace SmartCardConversaiton
                 //Schrijf registratie ID
                 Console.WriteLine("Registratie voor " + registratiePas);
                 //Maak booleans voor error catching
-                
+                Boolean Error = false;
+                Boolean ErrorPunten = false;
                 //Maak standaard int voor Punten (voor return)
                 int PuntAantal = 0;
                 //Maak connectiestring
@@ -301,7 +291,6 @@ namespace SmartCardConversaiton
                         //Niet +? Dan -!
                         PuntAantal -= 10;
                     }
-                    
                 }
                 //Geen error?
                 if (!ErrorPunten)
@@ -349,34 +338,27 @@ namespace SmartCardConversaiton
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            materialLabel1.Text = "STATUS: READING";
-            this.Refresh();
             LeesPasUit();
-            materialLabel1.Text = "STATUS: IDLE";
         }
 
         private void materialRaisedButton2_Click(object sender, EventArgs e)
         {
-            materialLabel1.Text = "STATUS: READING";
-            this.Refresh();
             LeesGegevensUitDB();
-            materialLabel1.Text = "STATUS: IDLE";
         }
 
         private void materialRaisedButton3_Click(object sender, EventArgs e)
         {
-            materialLabel1.Text = "STATUS: READING";
-            this.Refresh();
             KenPuntToe("+");
-            materialLabel1.Text = "STATUS: IDLE";
         }
 
         private void materialRaisedButton4_Click(object sender, EventArgs e)
         {
-            materialLabel1.Text = "STATUS: READING";
-            this.Refresh();
             KenPuntToe("-");
-            materialLabel1.Text = "STATUS: IDLE";
+        }
+
+        private void materialRaisedButton2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
