@@ -1,7 +1,9 @@
 body {
     background-image: url(/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size:100% auto;
 }
 
 .jumbotron {
-    background-color: rgba(223, 223, 223, 0.6);
+    background-color: rgba(223, 223, 223, 0.6)!important;
 }
