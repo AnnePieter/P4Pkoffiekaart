@@ -14,8 +14,30 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h1>Dit is een header. Fucking leuk man goed gedaan.</h1>
+                <h1>Koffiekaart Check</h1>
             </div>
+            <div class="panel panel-default">
+            <div class="panel-heading">
+                @if(!IsPost)
+                {
+                    <p>welcome!</p>
+                }
+            </div>
+            <div class="panel-body">
+                 @if(!IsPost)
+                {
+                    <form method="get">
+                        <div class="nameinput">
+                            <div class="inputform">
+                                <label for="name">Please give your full name:</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <button type="button" class="btn btn-info">Check</button>
+                        </div>
+                    </form>
+                }
+            </div>
+        </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
