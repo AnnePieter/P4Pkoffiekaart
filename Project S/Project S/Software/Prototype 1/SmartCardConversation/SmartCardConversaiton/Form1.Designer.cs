@@ -133,6 +133,7 @@
             this.materialRaisedButton1.Text = "Kaart Lezen";
             this.materialRaisedButton1.UseCompatibleTextRendering = true;
             this.materialRaisedButton1.UseVisualStyleBackColor = false;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialRaisedButton2
             // 
@@ -145,7 +146,7 @@
             this.materialRaisedButton2.TabIndex = 7;
             this.materialRaisedButton2.Text = "Informatie Lezen";
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
-            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click_1);
+            this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
             // materialRaisedButton3
             // 

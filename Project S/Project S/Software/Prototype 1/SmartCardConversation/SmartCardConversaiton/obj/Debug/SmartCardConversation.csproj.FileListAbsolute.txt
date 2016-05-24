@@ -73,3 +73,11 @@ C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1
 C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MaterialSkin.dll
 C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.dll
 C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Kaartlezer.resources
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversaiton.Properties.Resources.resources
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversation.csproj.GenerateResource.Cache
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.pdb
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MaterialSkin.dll
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.dll
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Fonts.dll
