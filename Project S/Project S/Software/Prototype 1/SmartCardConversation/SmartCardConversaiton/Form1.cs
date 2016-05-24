@@ -137,57 +137,64 @@ namespace SmartCardConversaiton
             //Als USB connectie er is
             if (readerUnit.ConnectToReader())
             {
-                //Wacht 15 seconden op een kaart
-                if (readerUnit.WaitInsertion(1500000))
-                {
-                    Console.WriteLine("Plaats uw kaart");
-                    //Als er connectie met een kaart is
-                    try {
-                        if (readerUnit.Connect())
+                try {
+                    //Wacht 15 seconden op een kaart
+                    if (readerUnit.WaitInsertion(1500000))
+                    {
+                        Console.WriteLine("Plaats uw kaart");
+                        //Als er connectie met een kaart is
+                        try {
+                            if (readerUnit.Connect())
+                            {
+
+                                //Schrijf connectie
+                                Console.WriteLine("CONNECTIE");
+
+                                //Pak chip uit de kaart
+                                chip chip = readerUnit.GetSingleChip();
+
+                                //Schrijf chip type
+                                Console.WriteLine("Card type: {0}", chip.Type);
+
+                                ////Schrijf manufacture nummer
+                                Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
+                                string deLijn = readerUnit.GetNumber(chip);
+
+
+                                //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
+                                //if (chip is IDESFireChip)
+                                //{
+                                //    ICommands cmd = chip.Commands;
+                                //    if (cmd is IDESFireEV1Commands)
+                                //    {
+                                //        Console.WriteLine("Mifare YUPPP");
+                                //    }
+                                //}
+
+                                //Netjes disconnecten
+                                readerUnit.Disconnect();
+                            }
+                        }
+                        catch (Exception)
                         {
 
-                            //Schrijf connectie
-                            Console.WriteLine("CONNECTIE");
-
-                            //Pak chip uit de kaart
-                            chip chip = readerUnit.GetSingleChip();
-
-                            //Schrijf chip type
-                            Console.WriteLine("Card type: {0}", chip.Type);
-
-                            ////Schrijf manufacture nummer
-                            Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
-                            string deLijn = readerUnit.GetNumber(chip);
-
-
-                            //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
-                            //if (chip is IDESFireChip)
-                            //{
-                            //    ICommands cmd = chip.Commands;
-                            //    if (cmd is IDESFireEV1Commands)
-                            //    {
-                            //        Console.WriteLine("Mifare YUPPP");
-                            //    }
-                            //}
-
-                            //Netjes disconnecten
-                            readerUnit.Disconnect();
                         }
-                    }
-                    catch(Exception)
-                    {
+
+
+                        //Remove kaart message
+                        Console.WriteLine("Remove card");
 
                     }
-
-
-                    //Remove kaart message
-                    Console.WriteLine("Remove card");
-
                 }
-
+                catch(Exception)
+                {
+                    MessageBox.Show("Geen kaartlezer aangesloten");
+                }
+               
                 //Disconnect met USB
                 readerUnit.Disconnect();
             }
+           
             
 
         }
