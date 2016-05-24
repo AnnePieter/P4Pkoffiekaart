@@ -29,20 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Kaartlezer));
+            this.tbAantalPuntjes = new System.Windows.Forms.TextBox();
             this.test = new MetroFramework.Controls.MetroTabControl();
+            this.Home = new MetroFramework.Controls.MetroTabPage();
             this.Debug = new MetroFramework.Controls.MetroTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbAantalPuntjes = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.Home = new MetroFramework.Controls.MetroTabPage();
             this.test.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.Home.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tbAantalPuntjes
+            // 
+            this.tbAantalPuntjes.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.tbAantalPuntjes.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
+            this.tbAantalPuntjes.Location = new System.Drawing.Point(647, 462);
+            this.tbAantalPuntjes.Name = "tbAantalPuntjes";
+            this.tbAantalPuntjes.Size = new System.Drawing.Size(104, 47);
+            this.tbAantalPuntjes.TabIndex = 3;
             // 
             // test
             // 
@@ -56,12 +65,25 @@
             this.test.TabIndex = 6;
             this.test.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // Home
+            // 
+            this.Home.BackColor = System.Drawing.Color.White;
+            this.Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home.BackgroundImage")));
+            this.Home.Controls.Add(this.groupBox1);
+            this.Home.HorizontalScrollbarBarColor = true;
+            this.Home.Location = new System.Drawing.Point(4, 35);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(1016, 729);
+            this.Home.TabIndex = 0;
+            this.Home.Text = "Home";
+            this.Home.VerticalScrollbarBarColor = true;
+            // 
             // Debug
             // 
             this.Debug.HorizontalScrollbarBarColor = true;
             this.Debug.Location = new System.Drawing.Point(4, 35);
             this.Debug.Name = "Debug";
-            this.Debug.Size = new System.Drawing.Size(1016, 729);
+            this.Debug.Size = new System.Drawing.Size(1014, 729);
             this.Debug.TabIndex = 1;
             this.Debug.Text = "Debug";
             this.Debug.VerticalScrollbarBarColor = true;
@@ -84,26 +106,17 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.UseCompatibleTextRendering = true;
             // 
-            // tbAantalPuntjes
-            // 
-            this.tbAantalPuntjes.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.tbAantalPuntjes.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
-            this.tbAantalPuntjes.Location = new System.Drawing.Point(647, 462);
-            this.tbAantalPuntjes.Name = "tbAantalPuntjes";
-            this.tbAantalPuntjes.Size = new System.Drawing.Size(104, 47);
-            this.tbAantalPuntjes.TabIndex = 3;
-            // 
             // materialLabel1
             // 
             this.materialLabel1.AutoSize = true;
             this.materialLabel1.BackColor = System.Drawing.Color.Transparent;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.DarkGray;
+            this.materialLabel1.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.materialLabel1.Location = new System.Drawing.Point(573, 512);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(285, 39);
+            this.materialLabel1.Size = new System.Drawing.Size(268, 45);
             this.materialLabel1.TabIndex = 5;
             this.materialLabel1.Text = "STATUS: Waiting";
             // 
@@ -159,19 +172,6 @@
             this.materialRaisedButton4.Text = "Koop een koffie";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
             // 
-            // Home
-            // 
-            this.Home.BackColor = System.Drawing.Color.White;
-            this.Home.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Home.BackgroundImage")));
-            this.Home.Controls.Add(this.groupBox1);
-            this.Home.HorizontalScrollbarBarColor = true;
-            this.Home.Location = new System.Drawing.Point(4, 35);
-            this.Home.Name = "Home";
-            this.Home.Size = new System.Drawing.Size(1016, 729);
-            this.Home.TabIndex = 0;
-            this.Home.Text = "Home";
-            this.Home.VerticalScrollbarBarColor = true;
-            // 
             // Kaartlezer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,24 +182,24 @@
             this.Name = "Kaartlezer";
             this.Text = "Kaartlezer";
             this.test.ResumeLayout(false);
+            this.Home.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.Home.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.TextBox tbAantalPuntjes;
         private MetroFramework.Controls.MetroTabControl test;
-        private MetroFramework.Controls.MetroTabPage Debug;
         private MetroFramework.Controls.MetroTabPage Home;
+        private MetroFramework.Controls.MetroTabPage Debug;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private System.Windows.Forms.TextBox tbAantalPuntjes;
     }
 }
 
