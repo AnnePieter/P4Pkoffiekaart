@@ -49,7 +49,6 @@ C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Protot
 C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.exe
 C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\SmartCardConversaiton.pdb
 C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MaterialSkin.dll
-C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Design.dll
 C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.dll
 C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\Interop.LibLogicalAccess.dll
@@ -73,3 +72,4 @@ C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1
 C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MaterialSkin.dll
 C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.dll
 C:\Users\Jaimy\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Startklaar\Documents\P4Pkoffiekaart\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\obj\Debug\SmartCardConversation.csprojResolveAssemblyReference.cache
