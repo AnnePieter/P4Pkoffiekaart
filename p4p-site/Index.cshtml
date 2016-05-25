@@ -1,5 +1,23 @@
 ﻿@{
-    
+    int punten = -1;
+    if(IsPost)
+    {
+        Validation.RequireField("naam","Name is required");
+        string naam = Request.Form["name"] ?? "";
+        naam = naam.Replace("'", "");
+        naam = naam.Replace("-","");
+        var db = Database.Open("p4p");
+        var row = db.QuerySingle("SELECT Punten FROM Kaarten WHERE Voornaam = @0",naam);
+        if(row != null)
+        {
+            punten = row.Punten;
+        }
+        else
+        {
+             Validation.AddFormError("No record found with that name, please try again");
+        }
+        db.Close();
+    }
 }
 
 <!DOCTYPE html>
@@ -9,7 +27,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="~/css/StyleSheet.css">
         <link href="~/css/bootstrap.min.css" rel="stylesheet">
-        <title>test</title>
+        <title>Koffiekaart Check</title>
     </head>
     <body>
         <div class="container">
@@ -26,15 +44,19 @@
             <div class="panel-body">
                  @if(!IsPost)
                 {
-                    <form method="get">
+                    <form method="post">
                         <div class="nameinput">
                             <div class="inputform">
                                 <label for="name">Please give your full name:</label>
-                                <input type="text" class="form-control" id="name">
+                                <input type="text" class="form-control" name="name">
                             </div>
                             <button type="button" class="btn btn-info">Check</button>
                         </div>
                     </form>
+                }
+                @if(IsPost)
+                {
+                    <p>Test: Punten @punten</p> 
                 }
             </div>
         </div>
