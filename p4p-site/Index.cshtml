@@ -1,14 +1,16 @@
 ﻿@{
     int punten = -1;
-    if(IsPost)
+    var count = 2121312321;
+    var sql = "";
+    
+    /*if(IsPost && Validation.IsValid() && !Request.Form["name"].IsEmpty())
     {
-        Validation.RequireField("naam","Name is required");
         string naam = Request.Form["name"] ?? "";
         naam = naam.Replace("'", "");
         naam = naam.Replace("-","");
         var db = Database.Open("p4p");
         var row = db.QuerySingle("SELECT Punten FROM Kaarten WHERE Voornaam = @0",naam);
-        if(row != null)
+        if(row != null && !Request.Form["name"].IsEmpty())
         {
             punten = row.Punten;
         }
@@ -16,8 +18,27 @@
         {
              Validation.AddFormError("No record found with that name, please try again");
         }
+        
         db.Close();
     }
+    */
+    if(IsPost)
+    {
+        Validation.RequireField("name","Please enter a valid name!");
+        string naam = Request.Form["name"] ?? "";
+        naam = naam.Replace("'", "");
+        naam = naam.Replace("-","");
+        var db = Database.Open("p4p");
+        sql = "SELECT COUNT(*) FROM Kaarten WHERE Voornaam=@0";
+        count = db.QueryValue(sql, naam);
+        if(count == 1)
+        {
+            var row = db.QuerySingle("SELECT Punten FROM Kaarten WHERE Voornaam = @0",naam);
+            punten = row.Punten;
+        }
+        db.Close();
+    }
+
 }
 
 <!DOCTYPE html>
@@ -36,9 +57,13 @@
             </div>
             <div class="panel panel-default">
             <div class="panel-heading">
-                @if(!IsPost)
+                @if(!IsPost || count == 0)
                 {
-                    <p>Welcome!</p>
+                    <h2>Welcome!</h2>
+                }
+                @if(IsPost && count == 1)
+                {
+                    <h2>@Request.Form["name"]</h2> 
                 }
             </div>
             <div class="panel-body">
@@ -50,13 +75,29 @@
                                 <label for="name">Please give your full name:</label>
                                 <input type="text" class="form-control" name="name">
                             </div>
-                            <button type="button" class="btn btn-info">Check</button>
+                            <button type="submit" class="btn btn-info">Check</button>
                         </div>
                     </form>
                 }
-                @if(IsPost)
+                @if(!Validation.IsValid() || count == 0)
                 {
-                    <p>Test: Punten @punten</p> 
+                    <div class="alert alert-danger">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Danger!</strong> Please enter a valid name!
+                    </div>
+                    <form method="post">
+                        <div class="nameinput">
+                            <div class="inputform">
+                                <label for="name">Please give your full name:</label>
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <button type="submit" class="btn btn-info">Check</button>
+                        </div>
+                    </form>
+                }
+                @if(IsPost && count == 1)
+                {
+                    <p>U heeft @punten punt(en)!</p> 
                 }
             </div>
         </div>
