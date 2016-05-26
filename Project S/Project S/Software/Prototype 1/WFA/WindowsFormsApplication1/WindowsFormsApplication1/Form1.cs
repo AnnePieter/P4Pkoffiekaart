@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
+        public int login = 0;
         public string RegistratiePasID()
         {
 
@@ -46,6 +46,7 @@ namespace WindowsFormsApplication1
 
                             //Schrijf chip type
                             ManNummer = readerUnit.GetNumber(chip);
+                            
                             readerUnit.Disconnect();
 
                         }
@@ -118,6 +119,8 @@ namespace WindowsFormsApplication1
                         Achternaam = reader[2].ToString();
                         Punten = reader[3].ToString();
                     }
+                    label1.Text = Voornaam + Achternaam;
+                    label2.Text = Punten;
                     //Sluit reader
                     reader.Close();
                     //Geef messagebox met gegevens en punten van gebruiker
@@ -128,9 +131,8 @@ namespace WindowsFormsApplication1
 
 
         //Lees pas uit en toon gegevens over pas (ManNummer, Chiptype)
-        public void LeesPasUit()
+        public void Login()
         {
-
             Console.WriteLine("Begin met uitlezen van pas");
 
             //Kijk of lezer connected is
@@ -149,6 +151,7 @@ namespace WindowsFormsApplication1
                     if (readerUnit.WaitInsertion(1500000))
                     {
                         Console.WriteLine("Plaats uw kaart");
+
                         //Als er connectie met een kaart is
                         try
                         {
@@ -161,23 +164,20 @@ namespace WindowsFormsApplication1
                                 //Pak chip uit de kaart
                                 chip chip = readerUnit.GetSingleChip();
 
-                                //Schrijf chip type
-                                Console.WriteLine("Card type: {0}", chip.Type);
+                                if (chip.Type == "")
+                                {
+                                    login = 1;
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                                    //Schrijf chip type
+                                    Console.WriteLine("Card type: {0}", chip.Type);
 
                                 ////Schrijf manufacture nummer
                                 Console.WriteLine("Card unique Manu Number: {0}", readerUnit.GetNumber(chip));
                                 string deLijn = readerUnit.GetNumber(chip);
-
-
-                                //Wat sudo code om t kijken of chip naar chip.commands luistert van MiFare (Werkt)
-                                //if (chip is IDESFireChip)
-                                //{
-                                //    ICommands cmd = chip.Commands;
-                                //    if (cmd is IDESFireEV1Commands)
-                                //    {
-                                //        Console.WriteLine("Mifare YUPPP");
-                                //    }
-                                //}
 
                                 //Netjes disconnecten
                                 readerUnit.Disconnect();
@@ -208,141 +208,113 @@ namespace WindowsFormsApplication1
         }
 
 
-        public void KenPuntToe(string Mod)
+        public void VoegToe(string Mod)
         {
-            Boolean Error = false;
-            Boolean ErrorPunten = false;
-            if (Mod == "+")
-            {
-                Error = true;
-                MessageBox.Show("Voeg aub een getal in!!");
-                return;
-            }
-            //Pak ManID van pas
-            string registratiePas = RegistratiePasID();
-            //Kijk of error terugkomt
-            if (registratiePas == "Error")
-            {
-                //Error, doe niks
-            }
-            else
-            {
-                //Schrijf registratie ID
-                Console.WriteLine("Registratie voor " + registratiePas);
-                //Maak booleans voor error catching
+            //Connectiestring naar DB
+            string ConnectionString =
+            @"Provider=Microsoft.Jet.OLEDB.4.0;" +
+            @"Data Source=MiFareKaarten.mdb;" +
+            @"User ID=;Password=;";
 
-                //Maak standaard int voor Punten (voor return)
-                int PuntAantal = 0;
-                //Maak connectiestring
-                string ConnectionString =
-                @"Provider=Microsoft.Jet.OLEDB.4.0;" +
-                @"Data Source=MiFareKaarten.mdb;" +
-                @"User ID=;Password=;";
-                //Maak query aan en strings om te vullen
-                string ReturnDBData = "SELECT Punten, Voornaam FROM MiFareDB WHERE KaartNummer = '" + registratiePas + "'";
-                string Punten = "";
-                string Voornaam = "";
-                //Int om te rekenen met punten
-                int ToevoegenPunten = 0;
-                //Connectie naar DB
+            //Pak registratiepas nummer uit functie
+            string RegistratiePasNummer = RegistratiePasID();
+
+            //Toon output
+            Console.WriteLine("UW ID IS:" + RegistratiePasNummer);
+
+            //Als we geen error terugkrijgen uit functie
+            if (Mod == "telefoon")
+            {
+                //Maak strings voor output en query
+                string ReturnDBData = "UPDATE MiFareDB SET telefoon = '"+ RegistratiePasID() +"' WHERE KaartNummer = '" + RegistratiePasNummer + "'";
+                //Nieuwe OleDB connectie
                 OleDbConnection connection = new OleDbConnection(ConnectionString);
-                using (OleDbCommand commando = new OleDbCommand(ReturnDBData, connection))
+                //Maak connectie en voer query uit
+                using (OleDbCommand command = new OleDbCommand(ReturnDBData, connection))
                 {
+                    //Error als er geen gegevens inkomen
+                    ReturnDBData = "User not found";
+                    //Open connectie
                     connection.Open();
-                    OleDbDataReader reader = commando.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        //Vul strings met gegevens uit DB
-                        Punten = reader[0].ToString();
-                        Voornaam = reader[1].ToString();
-                        Console.WriteLine(Punten);
-                    }
-                    reader.Close();
-                }
-                try
-                {
-                    //Probeer punten te converten
-                    PuntAantal = Convert.ToInt32(Punten);
-                }
-                catch (Exception)
-                {
-                    //Fout op conversion --> Kaart issues
-                    MessageBox.Show("Kaart niet goed uitgelezen");
-                }
-
-                //Als er punten toegevoegd moeten worden
-                if (Mod == "+")
-                {
-                    try
-                    {
-                        ToevoegenPunten = 0;
-                        PuntAantal += ToevoegenPunten;
-                    }
-                    catch (Exception)
-                    {
-                        Error = true;
-                        MessageBox.Show("Voeg aub een getal in!!");
-                    }
-                }
-
-                else
-                {
-
-                    //Kijk of punten niet negatief worden
-                    if (PuntAantal < 10)
-                    {
-                        //Anders error
-                        ErrorPunten = true;
-                        MessageBox.Show("Helaas heeft u niet genoeg punten om koffie te kopen.");
-                    }
-                    else
-                    {
-                        //Niet +? Dan -!
-                        PuntAantal -= 10;
-                    }
-
-                }
-                //Geen error?
-                if (!ErrorPunten)
-                {
-                    //Nieuwe database command
-                    OleDbCommand command = new OleDbCommand();
-                    //Maak update commando aan
-                    command.CommandType = CommandType.Text;
-                    command.CommandText = "UPDATE MiFareDB SET Punten=@Punten where KaartNummer = '" + registratiePas + "'";
-                    command.Parameters.AddWithValue("@Punten", PuntAantal);
-                    command.Connection = connection;
                     command.ExecuteNonQuery();
-                    connection.Close();
-                    //Error
-                    if (Error)
-                    {
-                        MessageBox.Show("Database error");
-                    }
-                    else
-                    {
-                        //Als +, geef bijhorende zin
-                        if (Mod == "+")
-                        {
-                            MessageBox.Show("Punten voor " + Voornaam + " zijn toegekend! Aantal punten is nu: " + PuntAantal);
-                        }
-                        //Als -, geef bijhorende zin
-                        else
-                        {
-                            MessageBox.Show(Voornaam + " heeft betaald met zijn punten! Aantal punten is nu: " + PuntAantal);
-                        }
-
-                    }
                 }
-            }
 
+            }
+            else if (Mod == "bankpas")
+            {
+                //Maak strings voor output en query
+                string ReturnDBData = "UPDATE MiFareDB SET bankpas = '" + RegistratiePasID() + "' WHERE KaartNummer = '" + RegistratiePasNummer + "'";
+                //Nieuwe OleDB connectie
+                OleDbConnection connection = new OleDbConnection(ConnectionString);
+                //Maak connectie en voer query uit
+                using (OleDbCommand command = new OleDbCommand(ReturnDBData, connection))
+                {
+                    //Error als er geen gegevens inkomen
+                    ReturnDBData = "User not found";
+                    //Open connectie
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+            }
+            if (Mod == "ov")
+            {
+                //Maak strings voor output en query
+                string ReturnDBData = "UPDATE MiFareDB SET ov = '" + RegistratiePasID() + "' WHERE KaartNummer = '" + RegistratiePasNummer + "'";
+                //Nieuwe OleDB connectie
+                OleDbConnection connection = new OleDbConnection(ConnectionString);
+                //Maak connectie en voer query uit
+                using (OleDbCommand command = new OleDbCommand(ReturnDBData, connection))
+                {
+                    //Error als er geen gegevens inkomen
+                    ReturnDBData = "User not found";
+                    //Open connectie
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Refresh();
-            LeesPasUit();
+            Login();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if(login == 1)
+            {
+                login = 0;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (login == 1)
+            {
+                VoegToe("telefoon");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (login == 1)
+            {
+                VoegToe("bankpas");
+            }
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (login == 1)
+            {
+                VoegToe("ov");
+            }
+
         }
     }
 }
