@@ -2,32 +2,15 @@
     int punten = -1;
     var count = 2121312321;
     var sql = "";
-    
-    /*if(IsPost && Validation.IsValid() && !Request.Form["name"].IsEmpty())
-    {
-        string naam = Request.Form["name"] ?? "";
-        naam = naam.Replace("'", "");
-        naam = naam.Replace("-","");
-        var db = Database.Open("p4p");
-        var row = db.QuerySingle("SELECT Punten FROM Kaarten WHERE Voornaam = @0",naam);
-        if(row != null && !Request.Form["name"].IsEmpty())
-        {
-            punten = row.Punten;
-        }
-        else
-        {
-             Validation.AddFormError("No record found with that name, please try again");
-        }
-        
-        db.Close();
-    }
-    */
     if(IsPost)
     {
         Validation.RequireField("name","Please enter a valid name!");
         string naam = Request.Form["name"] ?? "";
         naam = naam.Replace("'", "");
         naam = naam.Replace("-","");
+        naam = naam.Replace("<","");
+        naam = naam.Replace(">", "");
+        naam = naam.Replace("\"", "");
         var db = Database.Open("p4p");
         sql = "SELECT COUNT(*) FROM Kaarten WHERE Voornaam=@0";
         count = db.QueryValue(sql, naam);
