@@ -2,7 +2,7 @@
     int punten = -1;
     var count = 2121312321;
     var sql = "";
-    var img = "";
+    var img = ".png";
     if(IsPost)
     {
         Validation.RequireField("name","Please enter a valid name!");
@@ -10,6 +10,7 @@
         naam = naam.Replace("'", "");
         naam = naam.Replace("-","");
         naam = naam.Replace("<","");
+        naam = naam.Replace(";", "");
         naam = naam.Replace(">", "");
         naam = naam.Replace("\"", "");
         var db = Database.Open("p4p");
@@ -19,40 +20,14 @@
         {
             var row = db.QuerySingle("SELECT Punten FROM Kaarten WHERE Voornaam = @0",naam);
             punten = row.Punten;
-            if(punten == 0){
-                img = "img/Empty Coffee.png";
+            if(punten <= 10)
+            {
+                 img ="img/" + punten.ToString() + img;
             }
-            if(punten == 1){
-                img = "img/One Coffee.png";
-            }
-            if(punten == 2){
-                img = "img/Two Coffee.png";
-            }
-            if(punten == 3){
-                img = "img/Three Coffee.png";
-            }
-            if(punten == 4){
-                img = "img/Four Coffee.png";
-            }
-            if(punten == 5){
-                img = "img/Five Coffee.png";
-            }
-            if(punten == 6){
-                img = "img/Six Coffee.png";
-            }
-            if(punten == 7){
-                img = "img/Seven Coffee.png";
-            }
-            if(punten == 8){
-                img = "img/Eight Coffee.png";
-            }
-            if(punten == 9){
-                img = "img/Nine Coffee.png";
-            }
-            if(punten == 10){
-                img = "img/Ten Coffee.png";
-            }
-                
+            else
+            {
+                img = "img/10" + img;
+            }               
         }
         db.Close();
     }
@@ -115,7 +90,7 @@
                 }
                 @if(IsPost && count == 1)
                 {
-                    <img alt="U heeft @punten punt(en)!" src="img/banner.png"/> 
+                    <img alt="U heeft @punten punt(en)!" src="@img"/> 
                 }
             </div>
              <div class="panel-footer">Copyright  © P4P Groep 28 2016</div>
