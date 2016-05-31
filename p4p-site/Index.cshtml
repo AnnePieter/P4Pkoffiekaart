@@ -36,7 +36,7 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h1>Koffiekaart Check</h1>
+                <img alt="Koffiekaart Check" src="img/banner.png"/> 
             </div>
             <div class="panel panel-default">
             <div class="panel-heading">
@@ -46,7 +46,7 @@
                 }
                 @if(IsPost && count == 1)
                 {
-                    <h2>@Request.Form["name"]</h2> 
+                    <h2>Welcome! @Request.Form["name"]</h2> 
                 }
             </div>
             <div class="panel-body">
@@ -66,7 +66,7 @@
                 {
                     <div class="alert alert-danger">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Danger!</strong> Please enter a valid name!
+                        <strong>Alert!</strong> Please enter a valid name!
                     </div>
                     <form method="post">
                         <div class="nameinput">
@@ -83,6 +83,7 @@
                     <p>U heeft @punten punt(en)!</p> 
                 }
             </div>
+             <div class="panel-footer">Copyright  © P4P Groep 28 2016</div>
         </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
