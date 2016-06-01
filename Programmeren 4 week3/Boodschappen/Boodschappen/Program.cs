@@ -10,6 +10,13 @@ namespace Boodschappen
     {
         static void Main(string[] args)
         {
+            List<Product> Boodschappen = new List<Product>();
+            Preservable Sportlife = new Preservable("sportlife", 2.29);
+            Boodschappen.Add(Sportlife);
+            Console.WriteLine(Boodschappen[0].);
+            Console.ReadLine();
+            
+
         }
     }
 }

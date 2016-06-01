@@ -8,5 +8,11 @@ namespace Boodschappen
 {
     class Fresh : Food
     {
+        public double Amount { get; set; }
+
+        public Fresh(string name, double price, double amount, decimal btw = 1.06m) : base (name, price, btw)
+        {
+            this.Amount = amount;
+        }
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Boodschappen
 {
-    class Preservable
+    class Preservable : Food
     {
+        public Preservable(string name, double price, decimal btw = 1.06m) : base (name, price, btw)
+        {
+            
+        }
     }
 }

@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Boodschappen
 {
-    class Product
+    abstract class Product
     {
+        public string Name { get; set; }
+        public double Price { get; set; }
+
+        public Product(string name, double price)
+        {
+            this.Name = name;
+            this.Price = price;
+        }
     }
 }

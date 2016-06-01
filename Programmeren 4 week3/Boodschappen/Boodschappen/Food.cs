@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Boodschappen
 {
-    class Food
+    abstract class Food : Product
     {
+        public decimal Btw { get; set; }
+
+        public Food(string name, double price, decimal btw = 1.06m) : base (name, price)
+        {
+                this.Btw = btw;
+        }
     }
 }
