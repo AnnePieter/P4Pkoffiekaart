@@ -172,6 +172,7 @@
             this.materialRaisedButton4.TabIndex = 9;
             this.materialRaisedButton4.Text = "Koop een koffie";
             this.materialRaisedButton4.UseVisualStyleBackColor = true;
+            this.materialRaisedButton4.Click += new System.EventHandler(this.materialRaisedButton4_Click);
             // 
             // Kaartlezer
             // 

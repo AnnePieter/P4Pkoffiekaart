@@ -81,3 +81,4 @@ C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 
 C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MaterialSkin.dll
 C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.dll
 C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\annepieter\Documents\GitHub\P4P\Project S\Project S\Software\Prototype 1\SmartCardConversation\SmartCardConversaiton\bin\Debug\MiFareKaarten.mdb

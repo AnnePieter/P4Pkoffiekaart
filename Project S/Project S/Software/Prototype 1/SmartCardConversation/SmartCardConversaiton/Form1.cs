@@ -110,7 +110,7 @@ namespace SmartCardConversaiton
             if (RegistratiePasNummer != "Error")
             {
                 //Maak strings voor output en query
-                string ReturnDBData = "SELECT * FROM MiFareDB WHERE KaartNummer = '" + RegistratiePasNummer + "'";
+                string ReturnDBData = "SELECT * FROM MiFareDB WHERE KaartNummer = '"+ RegistratiePasNummer +"' OR Telefoon = '"+ RegistratiePasNummer +"' OR OV = '"+ RegistratiePasNummer + "' OR Bankpas = '" + RegistratiePasNummer + "'";
                 string Voornaam = "";
                 string Achternaam = "";
                 string Punten = "";
@@ -233,7 +233,7 @@ namespace SmartCardConversaiton
                 @"Data Source=MiFareKaarten.mdb;" +
                 @"User ID=;Password=;";
                 //Maak query aan en strings om te vullen
-                string ReturnDBData = "SELECT Punten, Voornaam FROM MiFareDB WHERE KaartNummer = '" + registratiePas + "'";
+                string ReturnDBData = "SELECT Punten, Voornaam FROM MiFareDB WHERE KaartNummer = '" + registratiePas + "' OR Telefoon = '" + registratiePas + "' OR OV = '" + registratiePas + "' OR Bankpas = '" + registratiePas + "'";
                 string Punten = "";
                 string Voornaam = "";
                 //Int om te rekenen met punten
@@ -303,7 +303,7 @@ namespace SmartCardConversaiton
                     OleDbCommand command = new OleDbCommand();
                     //Maak update commando aan
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "UPDATE MiFareDB SET Punten=@Punten where KaartNummer = '" + registratiePas + "'";
+                    command.CommandText = "UPDATE MiFareDB SET Punten=@Punten where KaartNummer = '" + registratiePas + "' OR Telefoon = '" + registratiePas + "' OR OV = '" + registratiePas + "' OR Bankpas = '" + registratiePas + "'";
                     command.Parameters.AddWithValue("@Punten", PuntAantal);
                     command.Connection = connection;
                     command.ExecuteNonQuery();
