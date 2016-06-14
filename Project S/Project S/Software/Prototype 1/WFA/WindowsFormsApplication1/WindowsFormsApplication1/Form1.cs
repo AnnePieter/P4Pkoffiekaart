@@ -18,6 +18,18 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Timer timer = new Timer();
+            timer.Interval = (1000);
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            this.Refresh();
+        }
         public int login = 0;
         string username;
         public string RegistratiePasID()
