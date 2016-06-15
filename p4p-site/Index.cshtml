@@ -1,18 +1,20 @@
 ﻿@{
     int punten = -1;
-    var count = 2121312321;
+    var count = -1;
     var sql = "";
     var img = ".png";
+    string naam = "";
     if(IsPost)
     {
         Validation.RequireField("name","Please enter a valid name!");
-        string naam = Request.Form["name"] ?? "";
+        naam = Request.Form["name"] ?? "";
         naam = naam.Replace("'", "");
         naam = naam.Replace("-","");
         naam = naam.Replace("<","");
         naam = naam.Replace(";", "");
         naam = naam.Replace(">", "");
         naam = naam.Replace("\"", "");
+        naam = naam.Replace("%", "");
         var db = Database.Open("p4p");
         sql = "SELECT COUNT(*) FROM Kaarten WHERE Voornaam=@0";
         count = db.QueryValue(sql, naam);
@@ -56,7 +58,7 @@
                 }
                 @if(IsPost && count == 1)
                 {
-                    <h2>Welcome! @Request.Form["name"]</h2> 
+                    <h2>Welcome @naam!</h2> 
                 }
             </div>
             <div class="panel-body">
@@ -90,7 +92,12 @@
                 }
                 @if(IsPost && count == 1)
                 {
+                    
                     <img alt="U heeft @punten punt(en)!" src="@img"/> 
+                    if(@punten >= 10)
+                    {
+                        <p> U kunt uw gratis koffie ophalen </p>
+                    }
                 }
             </div>
              <div class="panel-footer">Copyright  © P4P Groep 28 2016</div>
