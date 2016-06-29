@@ -108,11 +108,11 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\Backgroundv1.2c.jpg" />
-    <Content Include="MetroFramework.txt" />
-    <Content Include="MiFareKaarten.mdb">
+    <Content Include="MiFareKaarten1.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Properties\Backgroundv1.2c.jpg" />
+    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

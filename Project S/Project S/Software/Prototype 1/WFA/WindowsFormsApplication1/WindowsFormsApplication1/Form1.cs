@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
             //Connectiestring naar DB
             string ConnectionString =
             @"Provider=Microsoft.Jet.OLEDB.4.0;" +
-            @"Data Source=MiFareKaarten.mdb;" +
+            @"Data Source=MiFareKaarten1.mdb;" +
             @"User ID=;Password=;";
 
             //Pak registratiepas nummer uit functie
@@ -153,7 +153,7 @@ namespace WindowsFormsApplication1
 
             string ConnectionString =
             @"Provider=Microsoft.Jet.OLEDB.4.0;" +
-            @"Data Source=MiFareKaarten.mdb;" +
+            @"Data Source=MiFareKaarten1.mdb;" +
             @"User ID=;Password=;";
 
             //Maak strings voor output en query
@@ -251,7 +251,7 @@ namespace WindowsFormsApplication1
             //Connectiestring naar DB
             string ConnectionString =
             @"Provider=Microsoft.Jet.OLEDB.4.0;" +
-            @"Data Source=MiFareKaarten.mdb;" +
+            @"Data Source=MiFareKaarten1.mdb;" +
             @"User ID=;Password=;";
 
             //Pak registratiepas nummer uit functie
