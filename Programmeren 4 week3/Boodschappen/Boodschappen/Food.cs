@@ -8,11 +8,12 @@ namespace Boodschappen
 {
     abstract class Food : Product
     {
-        public decimal Btw { get; set; }
+        private int btw;
+        public int Btw { get { return btw; } set { btw = value; } }
 
-        public Food(string name, double price, decimal btw = 1.06m) : base (name, price)
+        public Food(string name, double price, int btw = 6) : base (name, price)
         {
-                this.Btw = btw;
+            this.btw = btw;
         }
     }
 }

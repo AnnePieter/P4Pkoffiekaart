@@ -8,11 +8,12 @@ namespace Boodschappen
 {
     class Non_Food : Product
     {
-        public decimal Btw { get; set; }
+        private int btw;
+        public int Btw { get { return btw; } set { btw = value; } }
 
-        public Non_Food(string name, double price, decimal btw = 1.21m) : base (name, price)
+        public Non_Food(string name, double price, int btw = 21) : base (name, price)
         {
-            this.Btw = btw;
+            this.btw = btw;
         }
     }
 }

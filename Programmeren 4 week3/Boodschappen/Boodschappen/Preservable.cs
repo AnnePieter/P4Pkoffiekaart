@@ -8,7 +8,7 @@ namespace Boodschappen
 {
     class Preservable : Food
     {
-        public Preservable(string name, double price, decimal btw = 1.06m) : base (name, price, btw)
+        public Preservable(string name, double price, int btw = 6) : base (name, price, btw)
         {
             
         }

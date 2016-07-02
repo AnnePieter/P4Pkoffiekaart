@@ -8,11 +8,12 @@ namespace Boodschappen
 {
     class Fresh : Food
     {
-        public double Amount { get; set; }
+        private double amount;
+        public double Amount { get { return amount; } set { amount = value; } }
 
-        public Fresh(string name, double price, double amount, decimal btw = 1.06m) : base (name, price, btw)
+        public Fresh(string name, double price, double amount, int btw = 6) : base (name, price, btw)
         {
-            this.Amount = amount;
+            this.amount = amount;
         }
     }
 }
